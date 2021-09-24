@@ -26,13 +26,13 @@ function User(props) {
     //       console.error(error)
     //     }
     //   }
-console.log(props.data);
     return( 
-        <div>
-
-            <div user-list>
-            {props.data.name}
-            <img className="user-avatar" src={props.data.avatar ? props.data.avatar : noAvatar} alt="Netu nihuya" />
+        <div className="user">
+            <div>
+                <img className="user-avatar" src={props.data.avatar ? props.data.avatar : noAvatar} alt="Netu nihuya" />
+            </div>
+            <div className="user-name">
+                {props.data.name}
             </div>
         </div>
     )
