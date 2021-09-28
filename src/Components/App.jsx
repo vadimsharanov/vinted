@@ -66,10 +66,10 @@ function App(props) {
     console.log(users);
     return  ( 
     <>
-    <h1>Vinted.lt nahooy</h1>
+    <h1></h1>
 
         <div className="main-container" >
-            {productData.map((product, i) => <Product key={i} data={product} user={getOneUser(product.user)} ></Product>)}
+            {productData === null? <h2 className="loader" ></h2> : productData.map((product, i) => <Product key={i} data={product} user={getOneUser(product.user)} ></Product>)}
         </div>
     </>
     )
