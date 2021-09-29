@@ -38,13 +38,13 @@ function ProductData(props) {
             {props.user.name}
         </div>
         <div className="product-image-price-size" >
-            <img className="product-image" src={props.data.img[1]} alt="" />
+            <img className="product-image" src={props.data.img[props.data.main_img]} alt="" />
             <span className="price-size-container" style={{marginLeft:"10px"}} >
                 <span className="product-price">
             {props.data.price.toFixed(2)}€
                 </span>
                 <span className="product-size" >
-            {props.data.size.map((oneSize,i)=> oneSize+" / " )}
+            {props.data.size.length >0 ? props.data.size.map((oneSize,i)=> oneSize + " / " ) : "dydis nenurodytas"}
                 </span>
             </span>
         </div>

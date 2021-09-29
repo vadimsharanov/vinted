@@ -5,11 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
   width: 100%;
- position: absolute;
- top: 5%;
-  left: 10%;
+
 }
 
 code {
@@ -23,6 +20,8 @@ code {
   grid-column-start: 3;
   width: 80%;
   position: absolute;
+  top: 10%;
+   left: 10%;
   // border:2px solid black;
   //  margin-left: 100px;
 }
@@ -100,15 +99,15 @@ code {
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid blue;
-  border-bottom: 16px solid blue;
+  border-top: 16px solid #09B1BA;
+  border-bottom: 16px solid #09B1BA;
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
-  position: absolute;
+  position: relative;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
 }
 
@@ -120,4 +119,16 @@ code {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.vinted-logo {
+  width: 87px;
+  height: 30px;
+  margin-left: 105px;
+}
+
+.vinted-header {
+  width: 100%;
+  border-bottom: solid 1px #ECECEC;
+  padding: 13px;
 }
