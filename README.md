@@ -1,6 +1,6 @@
 Hello!
 
-To see the content, wait for ~1 minute.
+To see the content, wait for ~10 seconds.
 Good Luck!
 
-https://vadim-sharanov-vinted.netlify.app/
+https://peaceful-turing-1558e1.netlify.app/
