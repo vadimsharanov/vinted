@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import Product from "./Product.jsx"
 
 
-// return orderResponse.data.id.indexOf( a.id ) - orderResponse.data.id.indexOf( b.id );
+
 
 function ProductAll(props) {
     const [productData, setProductData] = useState([])
@@ -12,10 +12,19 @@ function ProductAll(props) {
     const usersList = []
     let productList = []
 
-
-
-console.log(users);
     useEffect(() => {
+        axios.get('https://in3.dev/vinted/api/news/')
+        .then(function (response) {
+        setOrderList(response.data);
+        })
+    }, []);
+
+    useEffect(() => {
+        const usersStorage = JSON.parse(localStorage.getItem('allUsers'));
+        if (usersStorage !== null) {
+            setUsers(usersStorage);
+            return;
+        }
             for (let i=1; i<=5;i++){
             let url = 'https://in3.dev/vinted/api/users/'
             url +=i
@@ -23,8 +32,7 @@ console.log(users);
             .then(function (response) {
                 usersList.push(response.data)
                 localStorage.setItem('allUsers', JSON.stringify(usersList));
-                console.log(users);
-                const usersCopy = JSON.parse(localStorage.getItem('allUsers'));
+                let usersCopy = JSON.parse(localStorage.getItem('allUsers'));
                 if (usersCopy !== null) {
                     setUsers(usersCopy)
                     return ;
@@ -34,8 +42,29 @@ console.log(users);
     }, []);
 
     useEffect(() => {
- 
+        const productsStorage = JSON.parse(localStorage.getItem('allProducts'));
 
+        if (productsStorage !== null) {
+            axios.get('https://in3.dev/vinted/api/news/')
+            .then(function (response) {
+                localStorage.setItem('orderList', JSON.stringify(response.data));
+                let orderListStorage = JSON.parse(localStorage.getItem('orderList'));
+                console.log(orderListStorage);
+            if (orderListStorage.length === 0) {
+                return ;
+            }
+            orderListStorage = orderListStorage.map(item=> item.id) 
+            console.log(orderListStorage);
+            let sorted;
+                sorted = productsStorage.sort(function(a,b) {
+                    return orderListStorage.indexOf( a.id ) - orderListStorage.indexOf( b.id );
+                })
+                setProductData(sorted)
+
+            })
+            // setProductData(productsStorage);
+            return;
+        }
         for (let i=1; i<=20;i++){
             let url = 'https://in3.dev/vinted/api/products/'
             url +=i
@@ -51,7 +80,6 @@ console.log(users);
             })
         }
  
-        console.log(productList)
     }, []);
 
     // useEffect(() => {
