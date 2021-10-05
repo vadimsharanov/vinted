@@ -49,12 +49,10 @@ function ProductAll(props) {
             .then(function (response) {
                 localStorage.setItem('orderList', JSON.stringify(response.data));
                 let orderListStorage = JSON.parse(localStorage.getItem('orderList'));
-                console.log(orderListStorage);
             if (orderListStorage.length === 0) {
                 return ;
             }
             orderListStorage = orderListStorage.map(item=> item.id) 
-            console.log(orderListStorage);
             let sorted;
                 sorted = productsStorage.sort(function(a,b) {
                     return orderListStorage.indexOf( a.id ) - orderListStorage.indexOf( b.id );
@@ -81,37 +79,6 @@ function ProductAll(props) {
         }
  
     }, []);
-
-    // useEffect(() => {
-    //     if (productsCopy !== null) {
-    //         async function getProducts() {
-    //             try {
-    //                 let  orderResponse
-    //                 orderResponse = await axios.get('https://in3.dev/vinted/api/news/');
-    //                 if (productsCopy !== null) {
-    //                     var sorted = productsCopy.sort(function(a,b) {
-    //                     })
-    //                     setProductData(sorted)
-    //                 }  
-    //             } catch (error) {
-    //                 console.error(error)
-    //             }
-    //         }
-    //     }
-    //     else {
-    //         setProductData(productsCopy)
-    //     }
-    //     getProducts()
-    //     getUsers()
-    //     setUsers(usersCopy)
-
-    // },[])
-    
-
-
-
-
-    
     const getOneUser = (id) => {
         for (let i = 0; i < users.length; i++) {
             if (id === users[i].id) {
