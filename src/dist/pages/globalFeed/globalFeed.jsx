@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./globalFeed.scss";
 import { API } from "../../shared/api";
 import axios from "axios";
 import SingleProduct from "../singleProduct/singleProduct";
@@ -8,10 +9,10 @@ const GlobalFeed = () => {
   const apiUrl = `${API}/news/`;
 
   useEffect(() => {
-    getUser();
+    getProductID();
   }, []);
 
-  async function getUser() {
+  async function getProductID() {
     try {
       const response = await axios.get("https://in3.dev/vinted/api/news/");
       setProducts(response.data);
@@ -19,12 +20,13 @@ const GlobalFeed = () => {
       console.error(error);
     }
   }
+
   if (!products) {
     return <h1>not yet</h1>;
   }
 
   return (
-    <div>
+    <div className='product-container'>
       {products.map((item) => (
         <SingleProduct productID={item.id} key={item.id}></SingleProduct>
       ))}
