@@ -3,14 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { API } from "../../shared/api";
-import "./singleProduct.scss";
+import "./card.scss";
 
 const Card = ({ productID, setFinished }) => {
   const [data, setData] = useState("");
   const [user, setUser] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [{ token }] = useLocalStorage(`products`);
-  const [{ token: users }] = useLocalStorage(`users`);
+  const [{ value: products }] = useLocalStorage(`products`);
+  const [{ value: users }] = useLocalStorage(`users`);
 
   const checkIsEmpty = (name) => {
     const trial = JSON.parse(localStorage.getItem(name));
