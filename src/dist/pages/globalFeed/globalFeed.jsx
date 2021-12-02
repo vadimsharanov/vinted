@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import "./globalFeed.scss";
 import { API } from "../../shared/api";
 import axios from "axios";
-import SingleProduct from "../singleProduct/singleProduct";
+import SingleProduct from "../card/card";
 const GlobalFeed = () => {
   const [products, setProducts] = useState("");
+  const [finished, setFinished] = useState(false);
   const apiUrl = `${API}/news/`;
 
   useEffect(() => {
