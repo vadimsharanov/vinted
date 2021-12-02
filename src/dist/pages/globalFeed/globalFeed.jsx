@@ -4,7 +4,7 @@ import { API } from "../../shared/api";
 import axios from "axios";
 import SingleProduct from "../card/card";
 const GlobalFeed = () => {
-  const [products, setProducts] = useState("");
+  const [news, setNews] = useState("");
   const apiUrl = `${API}/news/`;
 
   useEffect(() => {
@@ -13,20 +13,20 @@ const GlobalFeed = () => {
 
   async function getProductID() {
     try {
-      const response = await axios.get(apiUrl);
-      setProducts(response.data);
+      const news = await axios.get(apiUrl);
+      setNews(news.data);
     } catch (error) {
       console.error(error);
     }
   }
 
-  if (!products) {
+  if (!news) {
     return <h1>Loading...</h1>;
   }
 
   return (
     <div className='product-container'>
-      {products.map((item) => (
+      {news.map((item) => (
         <SingleProduct productID={item.id} key={item.id}></SingleProduct>
       ))}
     </div>
