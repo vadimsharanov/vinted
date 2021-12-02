@@ -9,5 +9,5 @@ export default (key, initialValue = JSON.stringify({})) => {
   useEffect(() => {
     localStorage.setItem(key, value);
   }, [value, key]);
-  return [value, setValue];
+  return [{ value, setValue }];
 };
