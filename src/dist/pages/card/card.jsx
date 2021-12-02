@@ -9,19 +9,34 @@ const Card = ({ productID, setFinished }) => {
   const [data, setData] = useState("");
   const [user, setUser] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [token] = useLocalStorage(`product/${productID}`);
+  const [token] = useLocalStorage(`products`);
+
+  const checkIsEmpty = () => {
+    const trial = JSON.parse(localStorage.getItem(`products`));
+    if (Object.keys(trial).length === 0) {
+      return false;
+    }
+    return true;
+  };
+
   async function getProduct() {
     try {
-      setIsLoading(true);
-      const product = token
-        ? JSON.parse(localStorage.getItem(`product/${productID}`))
-        : await axios.get(`${API}/products/${productID}`);
+      let product;
+      if (checkIsEmpty()) {
+        let allProducts = JSON.parse(localStorage.getItem(`products`));
+        product = allProducts[`product/${productID}`];
+      } else {
+        product = await axios.get(`${API}/products/${productID}`);
+      }
 
       if (product.data) {
-        localStorage.setItem(`product/${productID}`, JSON.stringify(product));
+        const objekt = JSON.parse(localStorage.getItem("test"));
+        objekt[`product/${productID}`] = product.data;
+        localStorage.setItem("test", JSON.stringify(objekt));
       }
-      const user = await axios.get(`${API}/users/${product.data.user}`);
-      setData(product.data);
+      const user = await axios.get(`${API}/users/${product}`);
+      // console.log(user);
+      setData(product.data ? product.data : product);
       setUser(user.data);
     } catch (error) {
       console.error(error);
@@ -34,7 +49,7 @@ const Card = ({ productID, setFinished }) => {
   return (
     <Link to={`/products/${productID}`} className='product-card'>
       {data.desc}
-      <h1>{user.name}</h1>
+      {/* <h1>{user.name}</h1> */}
     </Link>
   );
 };

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default (key, initialValue = "") => {
+export default (key, initialValue = JSON.stringify({})) => {
   const [value, setValue] = useState(() => {
     return localStorage.getItem(key) || initialValue;
   });

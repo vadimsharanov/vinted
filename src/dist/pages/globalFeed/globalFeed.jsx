@@ -9,6 +9,10 @@ const GlobalFeed = () => {
   const [finished, setFinished] = useState(false);
   const apiUrl = `${API}/news/`;
 
+  // const storage = {};
+
+  // localStorage.setItem("test", JSON.stringify(storage));
+
   useEffect(() => {
     getProductID();
   }, []);
