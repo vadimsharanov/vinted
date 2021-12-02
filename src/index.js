@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./styles/index.scss";
 import App from "./App.jsx";
 import reportWebVitals from "./reportWebVitals";
-
+import "../node_modules/font-awesome/css/font-awesome.min.css";
 ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
