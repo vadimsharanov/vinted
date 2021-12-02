@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./globalFeed.scss";
 import { API } from "../../shared/api";
 import axios from "axios";
 import SingleProduct from "../card/card";
 const GlobalFeed = () => {
   const [products, setProducts] = useState("");
-  const [finished, setFinished] = useState(false);
   const apiUrl = `${API}/news/`;
-
-  // const storage = {};
-
-  // localStorage.setItem("test", JSON.stringify(storage));
 
   useEffect(() => {
     getProductID();
@@ -19,7 +13,7 @@ const GlobalFeed = () => {
 
   async function getProductID() {
     try {
-      const response = await axios.get("https://in3.dev/vinted/api/news/");
+      const response = await axios.get(apiUrl);
       setProducts(response.data);
     } catch (error) {
       console.error(error);
@@ -27,7 +21,7 @@ const GlobalFeed = () => {
   }
 
   if (!products) {
-    return <h1>not yet</h1>;
+    return <h1>Loading...</h1>;
   }
 
   return (

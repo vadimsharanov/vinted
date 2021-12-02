@@ -1,14 +1,12 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import useLocalStorage from "../../hooks/useLocalStorage";
-import { API } from "../../shared/api";
+
 import "./card.scss";
 
 const Card = ({ productID }) => {
   const [user, data] = useFetch(productID);
-
+  console.log(data);
   return (
     <Link to={`/products/${productID}`} className='product-card'>
       {data.desc}

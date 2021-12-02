@@ -1,13 +1,13 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { API } from "../shared/api";
 import useLocalStorage from "./useLocalStorage";
 
 const useFetch = (productID) => {
   const [data, setData] = useState("");
   const [user, setUser] = useState("");
-  const [{ value: products }] = useLocalStorage(`products`);
-  const [{ value: users }] = useLocalStorage(`users`);
+  useLocalStorage(`products`);
+  useLocalStorage(`users`);
 
   const checkIsEmpty = (name) => {
     const trial = JSON.parse(localStorage.getItem(name));
