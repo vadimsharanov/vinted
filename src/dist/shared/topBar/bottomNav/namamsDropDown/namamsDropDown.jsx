@@ -20,38 +20,30 @@ const NamamsDropDown = () => {
         <div className='moterims-dropdown-all-levels'>
           <div className='moterims-first-level'>
             <span className='with-icon'>
-              Peržiurėti viską
+              Peržiūrėti viską
               <i class='fa fa-th' aria-hidden='true'></i>
             </span>
             <span>
               Drabužiai
               <i class='fas fa-tshirt' aria-hidden='true'></i>
             </span>
-            <span>Batai</span>
-            <span>Rankinės</span>
-            <span>Aksesuarai</span>
-            <span>Kosmetika</span>
+            <span>Tekstilė</span>
+            <span>Interjero akcentai</span>
+            <span>Stalo serviravimas</span>
+            <span>Knygos</span>
           </div>
           <div className='moterims-second-level'>
-            <span>Peržiurėti viską</span>
-            <span>Megztiniai ir džemperiai</span>
-            <span>2 Sukneles</span>
-            <span>Marškiniai, palaidinės</span>
-            <span>Kelnės ir tamprės</span>
-            <span>Kombinezonai</span>
-            <span>Apatinis trikotažas ir naktin...</span>
-            <span>Aktyvaus laisvalaikio drabuž...</span>
-            <span>Kiti drabužiai</span>
+            <span>Peržiūrėti viską</span>
+            <span>Antklodės</span>
+            <span>Dekoratyvinės pagalvės</span>
+            <span>Staltiesės</span>
+            <span>Rankšluoščiai</span>
           </div>
           <div className='moterims-third-level'>
-            <span>Paltai ir striukės</span>
-            <span>Švarkeliai ir kostiumeliai</span>
-            <span>Sijonai</span>
-            <span>Džinsai</span>
-            <span>Šortai</span>
-            <span>Maudymukai</span>
-            <span>Apranga nėštukėms</span>
-            <span>Kostiumas, specializuota apr...</span>
+            <span>Patalynė</span>
+            <span>Užuolaidos</span>
+            <span>Kilimeliai</span>
+            <span>Dekoratyviniai audiniai</span>
           </div>
         </div>
       </div>

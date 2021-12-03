@@ -1,4 +1,5 @@
 import React from "react";
+import ApieMusDropDown from "./apieMusDropDown/apieMusDropDown";
 import "./bottomNav.scss";
 import MoterimsDropDown from "./moterimsDropDown/moterimsDropDown";
 import NamamsDropDown from "./namamsDropDown/namamsDropDown";
@@ -11,6 +12,7 @@ const BottomNav = () => {
       <VyramsDropDown></VyramsDropDown>
       <VaikamsDropDown></VaikamsDropDown>
       <NamamsDropDown></NamamsDropDown>
+      <ApieMusDropDown></ApieMusDropDown>
     </div>
   );
 };

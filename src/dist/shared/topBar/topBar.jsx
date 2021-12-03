@@ -1,25 +1,22 @@
 import React from "react";
 import DropDown from "./dropDown/dropDown";
-import Select from "react-select";
+import "./topBar.scss";
 import BottomNav from "./bottomNav/bottomNav";
-
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
-
+import { Link } from "react-router-dom";
 const TopBar = () => {
+  // link;
   return (
     <div className='nav-bar'>
       <div className='top-nav-bar'>
-        <div className='nav-logo-container'>
-          <img
-            className='nav-logo'
-            src='https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png'
-            alt='vinted-logo'
-          />
-        </div>
+        <Link to='/'>
+          <div className='nav-logo-container'>
+            <img
+              className='nav-logo'
+              src='https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png'
+              alt='vinted-logo'
+            />
+          </div>
+        </Link>
         <div className='dropdown-container'>
           <DropDown></DropDown>
         </div>
@@ -36,7 +33,7 @@ const TopBar = () => {
         </div>
       </div>
       <div className='horizontal-line'></div>
-      <div style={{ position: "relative" }}>
+      <div style={{ backgroundColor: "yellow", width: "100%" }}>
         <BottomNav></BottomNav>
       </div>
     </div>
