@@ -1,4 +1,5 @@
 import React from "react";
+import DropDown from "./dropDown";
 
 const TopBar = () => {
   return (
@@ -10,21 +11,19 @@ const TopBar = () => {
           alt='vinted-logo'
         />
       </div>
-      {/* <div className='nav-selector-search'>
-        <select name='' id=''>
-          <i class='fa fa-caret-down' aria-hidden='true'></i>
-          <option value='volvo'>Volvo</option>
-          <option value='saab'>Saab</option>
-          <option value='mercedes'>Mercedes</option>
-          <option value='audi'>Audi</option>
-        </select>
-        <input type='text' />
-      </div> */}
-
+      <div className='dropdown-container'>
+        <DropDown></DropDown>
+      </div>
       <div className='nav-buttons'>
-        <button>Registruotis | Prisijungti</button>
-        <button>Įkelti prekę</button>
-        <div></div>
+        <button className='registration-button'>
+          Registruotis | Prisijungti
+        </button>
+        <button className='new-product-button'>Įkelti prekę</button>
+        <div className='question-button'>
+          <a href='#'>
+            <i class='fa fa-question-circle-o' aria-hidden='true'></i>
+          </a>
+        </div>
       </div>
     </div>
   );

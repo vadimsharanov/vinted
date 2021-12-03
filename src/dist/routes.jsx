@@ -9,7 +9,7 @@ const AllRoutes = () => {
     <Routes>
       <Route path='/' element={<GlobalFeed></GlobalFeed>}></Route>
       <Route path='/products/:id' element={<CardPage></CardPage>}></Route>
-      <Route path='/productssss' element={<DropDown></DropDown>}></Route>
+      {/* <Route path='/productssss' element={<DropDown></DropDown>}></Route> */}
     </Routes>
   );
 };

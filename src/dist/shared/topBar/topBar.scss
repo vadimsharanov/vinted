@@ -1,17 +1,64 @@
 .nav-logo {
-  width: 130px;
-  height: 45px;
-  background-color: yellow;
+  width: 80px;
+  height: 25px;
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 .top-bar {
+  width: 80%;
+  margin-left: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 45px;
   .nav-logo-container {
-    background-color: antiquewhite;
-    margin: 30px;
+    margin: 20px;
+  }
+}
+
+.dropdown-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  .registration-button {
+    width: 160px;
+    border-radius: 5px 5px 5px 5px;
+    border: solid 1px #09b1ba;
+    font-size: 14px;
+    color: #09b8d2;
+    height: 29px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .registration-button:hover {
+    background-color: #fafdfe;
+  }
+  .new-product-button {
+    width: 85px;
+    background-color: #09b1ba;
+    color: #fff;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .question-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    .fa-question-circle-o {
+      color: #bbbbbb;
+      font-size: 25px;
+      font-weight: 0;
+    }
   }
 }
