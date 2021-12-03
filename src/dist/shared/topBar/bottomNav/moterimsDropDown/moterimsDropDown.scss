@@ -1,20 +1,16 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  margin-top: 300px;
-  margin-left: 300px;
+.moterims-dropdown-all-levels {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 27px;
 }
 
 .moterims-button {
-  padding: 10px 7px 10px 7px;
+  padding: 10px 12px 10px 12px;
   border: none;
   color: #b7b7b7;
   background-color: #ffffff;
-  font-family: "Maison Neue", "Helvetica Neue", "Helvetica-Neue", "Arial",
-    sans-serif;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .moterims-button:hover {
@@ -31,19 +27,20 @@
 .moterims-content-yes {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
 }
 
 .moterims-first-level {
   display: flex;
   flex-direction: column;
+  font-size: 24px;
+  gap: 22px;
   span:hover {
-    background-color: red;
+    background-color: #fafafa;
   }
   span {
-    padding: 20px;
+    padding: 13px 18px 13px 18px;
     padding-left: 40px;
-    // margin-left: 10px;
     i {
       position: absolute;
       left: 15px;
@@ -53,15 +50,29 @@
 .moterims-second-level {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  gap: 10px;
+
   span {
-    padding: 10px;
+    padding: 6px 18px 6px 18px;
+    margin-top: 10px;
+  }
+  span:hover {
+    background-color: #fafafa;
   }
 }
 .moterims-third-level {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  gap: 10px;
+
   span {
-    padding: 10px;
+    padding: 6px 18px 6px 18px;
+    margin-top: 10px;
+  }
+  span:hover {
+    background-color: #fafafa;
   }
 }
 .fa fa-th {

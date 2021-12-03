@@ -36,7 +36,9 @@ const TopBar = () => {
         </div>
       </div>
       <div className='horizontal-line'></div>
-      <BottomNav></BottomNav>
+      <div style={{ position: "relative" }}>
+        <BottomNav></BottomNav>
+      </div>
     </div>
   );
 };

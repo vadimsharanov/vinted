@@ -1,4 +1,8 @@
 .bottom-nav {
   display: flex;
   gap: 20px;
+  position: absolute;
+  z-index: 99;
+  width: 78%;
+  margin-left: 10%;
 }
