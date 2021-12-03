@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-top: 300px;
+  margin-left: 300px;
+}
+
+.moterims-button {
+  padding: 10px 7px 10px 7px;
+  border: none;
+  color: #b7b7b7;
+  background-color: #ffffff;
+  font-family: "Maison Neue", "Helvetica Neue", "Helvetica-Neue", "Arial",
+    sans-serif;
+  font-size: 13px;
+}
+
+.moterims-button:hover {
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+
+.moterims-content-none {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  display: none;
+}
+.moterims-content-yes {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.moterims-first-level {
+  display: flex;
+  flex-direction: column;
+  span:hover {
+    background-color: red;
+  }
+  span {
+    padding: 20px;
+    padding-left: 40px;
+    // margin-left: 10px;
+    i {
+      position: absolute;
+      left: 15px;
+    }
+  }
+}
+.moterims-second-level {
+  display: flex;
+  flex-direction: column;
+  span {
+    padding: 10px;
+  }
+}
+.moterims-third-level {
+  display: flex;
+  flex-direction: column;
+  span {
+    padding: 10px;
+  }
+}
+.fa fa-th {
+  width: 20px;
+  position: absolute;
+}
+
+.with-icon {
+  display: flex;
+}

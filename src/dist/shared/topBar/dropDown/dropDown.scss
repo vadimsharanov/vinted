@@ -37,7 +37,7 @@
   width: 131px;
 }
 
-.dropdown-content-yes span {
+.dropdown-content-yes .dropdown-content-option {
   width: 117px;
   color: #666666;
   padding: 5px;
@@ -48,7 +48,7 @@
   font-size: 14px;
 }
 
-span:hover {
+.dropdown-content-option:hover {
   background-color: #fafafa;
 }
 

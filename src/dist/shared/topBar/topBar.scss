@@ -1,21 +1,27 @@
-.nav-logo {
-  width: 80px;
-  height: 25px;
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 10px;
+.nav-bar {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  width: 100%;
 }
 
-.top-bar {
+.top-nav-bar {
   width: 80%;
   margin-left: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 45px;
+
   .nav-logo-container {
-    margin: 20px;
+    margin: 10px;
   }
+}
+.nav-logo {
+  width: 80px;
+  height: 25px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .dropdown-container {
@@ -61,4 +67,13 @@
       font-weight: 0;
     }
   }
+}
+
+.horizontal-line {
+  border: solid 0.1px #ececec;
+}
+
+.bottom-nav-bar {
+  display: flex;
+  gap: 20px;
 }

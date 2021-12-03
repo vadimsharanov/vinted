@@ -57,10 +57,18 @@ const DropDown = () => {
         </button>
         <div
           className={open ? "dropdown-content-yes" : "dropdown-content-none"}>
-          <span onClick={option}>Prekės</span>
-          <span onClick={option}>Nariai</span>
-          <span onClick={option}>Forumas</span>
-          <span onClick={option}>Pagalbos centras</span>
+          <span className='dropdown-content-option' onClick={option}>
+            Prekės
+          </span>
+          <span className='dropdown-content-option' onClick={option}>
+            Nariai
+          </span>
+          <span className='dropdown-content-option' onClick={option}>
+            Forumas
+          </span>
+          <span className='dropdown-content-option' onClick={option}>
+            Pagalbos centras
+          </span>
         </div>
       </div>
       <div className='input-icons'>
