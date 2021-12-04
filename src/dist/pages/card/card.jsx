@@ -6,7 +6,6 @@ import "./card.scss";
 
 const Card = ({ productID }) => {
   const [user, data, brand, cat] = useFetch(productID);
-  console.log(cat.title);
   return (
     <Link to={`/products/${productID}`} className='product-card'>
       {data.desc}

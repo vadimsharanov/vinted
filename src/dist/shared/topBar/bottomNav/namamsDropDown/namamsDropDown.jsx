@@ -9,7 +9,6 @@ const NamamsDropDown = () => {
     if (!open) {
       setOpen(true);
     }
-    console.log(open);
   };
   return (
     <div className='moterims-dropdown'>
