@@ -45,7 +45,6 @@ const useFetch = (productID) => {
           setBrand(brand);
         }
         cat = allCats[`cat/${product.cat}`];
-        console.log(cat);
         setData(product);
         setUser(user);
         setCat(cat);
@@ -86,7 +85,6 @@ const useFetch = (productID) => {
   useEffect(() => {
     getProduct();
   }, [productID]);
-
   return [user, data, brand, cat];
 };
 export default useFetch;

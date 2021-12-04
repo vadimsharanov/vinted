@@ -1,6 +1,38 @@
 .product-card {
   margin-top: 20px;
-  border: 2px solid black;
+  border: 1px solid black;
   text-decoration: none;
   color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .card-username {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    gap: 10px;
+    color: #a69999;
+
+    .card-avatar-container {
+      .card-avatar-image {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .card-product-image-container {
+    .card-product-image {
+      width: 236px;
+      height: 358px;
+    }
+  }
+}
+
+.card-product-price-like {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

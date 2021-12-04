@@ -8,7 +8,7 @@ const TopBar = () => {
   return (
     <div className='nav-bar container'>
       <div className='row top-nav-bar'>
-        <div className='col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 '>
+        <div className='col-12 col-xl-1 col-lg-2 col-md-12 col-sm-12 '>
           <Link to='/'>
             <div className='nav-logo-container'>
               <img
@@ -19,20 +19,18 @@ const TopBar = () => {
             </div>
           </Link>
         </div>
-        <div className='col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 dropdown-container'>
+        <div className='col-12 col-xl-7 col-lg-6 col-md-12 col-sm-12 dropdown-container'>
           <DropDown></DropDown>
         </div>
-        <div className='col-4 col-xl-4 col-lg-4 col-md-4'>
-          <div className='nav-buttons'>
-            <button className='registration-button'>
-              Registruotis | Prisijungti
-            </button>
-            <button className='new-product-button'>Įkelti prekę</button>
-            <div className='question-button'>
-              <a href=''>
-                <i class='fa fa-question-circle-o' aria-hidden='true'></i>
-              </a>
-            </div>
+        <div className='col-4 col-xl-4 col-lg-4 col-md-4 nav-buttons'>
+          <button className='registration-button'>
+            Registruotis | Prisijungti
+          </button>
+          <button className='new-product-button'>Įkelti prekę</button>
+          <div className='question-button'>
+            <a href=''>
+              <i class='fa fa-question-circle-o' aria-hidden='true'></i>
+            </a>
           </div>
         </div>
       </div>
