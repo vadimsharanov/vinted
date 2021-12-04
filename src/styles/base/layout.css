@@ -8,10 +8,22 @@
   /* padding: 80px 0; */
   gap: var(--row-gap);
 }
+.container-feed {
+  display: grid;
+  grid-template-columns: 15px 1fr 15px;
+  /* padding: 80px 0; */
+  gap: var(--row-gap);
+}
 
 .container > .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-column: 2/3;
+  gap: 15px;
+}
+.container-feed > .row-feed {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
   grid-column: 2/3;
   gap: 15px;
 }
@@ -23,6 +35,9 @@
   grid-column: auto / span 2;
 }
 .container > .row > .col-3 {
+  grid-column: auto / span 3;
+}
+.container-feed > .row-feed > .col-3 {
   grid-column: auto / span 3;
 }
 .container > .row > .col-4 {
@@ -57,6 +72,9 @@
   .container {
     grid-template-columns: 1fr 540px 1fr;
   }
+  .container-feed {
+    grid-template-columns: 1fr 540px 1fr;
+  }
   .container > .row {
     --row-gap: 10px;
   }
@@ -67,6 +85,9 @@
     grid-column: auto / span 2;
   }
   .container > .row > .col-sm-3 {
+    grid-column: auto / span 3;
+  }
+  .container-feed > .row-feed > .col-sm-3 {
     grid-column: auto / span 3;
   }
   .container > .row > .col-sm-4 {
@@ -102,6 +123,9 @@
   .container {
     grid-template-columns: 1fr 720px 1fr;
   }
+  .container-feed {
+    grid-template-columns: 1fr 720px 1fr;
+  }
   .container > .row {
     --row-gap: 10px;
   }
@@ -111,7 +135,7 @@
   .container > .row > .col-md-2 {
     grid-column: auto / span 2;
   }
-  .container > .row > .col-md-3 {
+  .container-feed > .row-feed > .col-md-3 {
     grid-column: auto / span 3;
   }
   .container > .row > .col-md-4 {
@@ -148,6 +172,10 @@
     grid-template-columns: 1fr 960px 1fr;
     gap: 20px;
   }
+  .container-feed {
+    grid-template-columns: 1fr 960px 1fr;
+    gap: 20px;
+  }
   .container > .row {
     --row-gap: 20px;
   }
@@ -157,7 +185,7 @@
   .container > .row > .col-lg-2 {
     grid-column: auto / span 2;
   }
-  .container > .row > .col-lg-3 {
+  .container-feed > .row-feed > .col-lg-3 {
     grid-column: auto / span 3;
   }
   .container > .row > .col-lg-4 {
@@ -193,13 +221,19 @@
   .container {
     grid-template-columns: 1fr 1140px 1fr;
   }
+  .container-feed {
+    grid-template-columns: 1fr 1140px 1fr;
+  }
   .container > .row > .col-xl-1 {
     grid-column: auto / span 1;
   }
   .container > .row > .col-xl-2 {
     grid-column: auto / span 2;
   }
-  .container > .row > .col-xl-3 {
+  .container > .row > .col-xl-2-4 {
+    grid-column: 5/6;
+  }
+  .container-feed > .row-feed > .col-xl-3 {
     grid-column: auto / span 3;
   }
   .container > .row > .col-xl-4 {

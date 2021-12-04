@@ -28,10 +28,12 @@ const GlobalFeed = () => {
   return (
     <div className='global-feed'>
       <Hero></Hero>
-      <div className='product-container'>
-        {news.map((item) => (
-          <SingleProduct productID={item.id} key={item.id}></SingleProduct>
-        ))}
+      <div className='container-feed '>
+        <div className='row-feed product-container'>
+          {news.map((item) => (
+            <SingleProduct productID={item.id} key={item.id}></SingleProduct>
+          ))}
+        </div>
       </div>
     </div>
   );
