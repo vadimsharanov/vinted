@@ -1,19 +1,21 @@
 .product-card {
   margin-top: 20px;
-  border: 1px solid black;
+  // border: 1px solid black;
   text-decoration: none;
   color: black;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  // position: absolute;
 
   .card-username {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 12px;
+    font-size: 13px;
     gap: 10px;
     color: #a69999;
+    margin-left: 5px;
 
     .card-avatar-container {
       .card-avatar-image {
@@ -24,15 +26,43 @@
     }
   }
   .card-product-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .card-product-image {
-      width: 236px;
-      height: 358px;
+      width: 100%;
+      max-width: 350px;
+      height: 330px;
     }
   }
 }
 
-.card-product-price-like {
+.card-product-price-like-container {
+  margin-left: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  .card-product-price {
+  }
+  .card-product-like {
+    display: flex;
+    align-items: center;
+    color: #a69999;
+    gap: 3px;
+  }
+}
+.card-product-size-brand-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  .card-product-size {
+    color: #a69999;
+    font-size: 13px;
+  }
+  .card-product-brand {
+    color: #a69999;
+    font-size: 14px;
+  }
 }

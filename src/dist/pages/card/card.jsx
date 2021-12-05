@@ -13,7 +13,7 @@ const Card = ({ productID }) => {
   return (
     <Link
       to={`/products/${productID}`}
-      className='product-card col-xl-3-5 col-lg-3  '>
+      className='product-card col-6 col-md-3 col-lg-3-5 col-xl-3-5 '>
       <div className='card-username'>
         <div className='card-avatar-container'>
           <img
@@ -27,17 +27,18 @@ const Card = ({ productID }) => {
       <div className='card-product-image-container'>
         <img
           className='card-product-image'
-          // src={data.img ? data.img[data.main_img] : "33"}
+          src={data.img ? data.img[data.main_img] : "33"}
           alt=''
         />
       </div>
       <div className='card-product-feed-desc'>
-        <div className='card-product-price-like'>
+        <div className='card-product-price-like-container'>
           <div className='card-product-price'>
-            {data.price ? data.price : ""}
+            {data.price ? data.price + " € " : ""}
           </div>
           <div className='card-product-like'>
-            2<i class='fa fa-heart-o' aria-hidden='true'></i>
+            <i class='fa fa-heart-o' aria-hidden='true'></i>
+            <span>3</span>
           </div>
         </div>
         <div className='card-product-size-brand-container'>
