@@ -1,0 +1,87 @@
+.cardpage {
+  margin-top: 50px;
+  background-color: #f5f6f7;
+  padding: 20px 20px 20px 20px;
+}
+
+.image-container {
+  border: 2px solid black;
+  display: flex;
+  div {
+    max-height: 270px;
+    img {
+      width: 300px;
+      object-fit: cover;
+    }
+  }
+}
+.card-page-main-information > div {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ececec;
+}
+.card-page-main-information {
+  .card-page-price {
+    font-size: 22px;
+  }
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  .card-page-about-product > div > :nth-child(2) {
+    color: #667eb5;
+    font-size: 16px;
+  }
+  .card-page-about-product > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #99a6c4;
+    font-size: 14px;
+    .card-page-brand {
+    }
+    .card-page-size {
+    }
+  }
+  .card-page-about-product {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .card-page-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .card-page-desc {
+    }
+  }
+  .card-page-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .teirautis-pardavejo {
+      width: 100%;
+      background-color: #09b1ba;
+      color: #fff;
+      border: none;
+      border-radius: 5px 5px 5px 5px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 7px;
+    }
+    .pazymeti {
+      width: 100%;
+      border-radius: 5px 5px 5px 5px;
+      border: solid 1px #09b1ba;
+      font-size: 14px;
+      color: #09b8d2;
+      padding: 7px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+    .pazymeti:hover {
+      background-color: #fafdfe;
+    }
+  }
+}

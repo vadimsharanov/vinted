@@ -10,6 +10,7 @@ const Card = ({ productID }) => {
   const [user, data, brand, cat] = useFetch(productID);
   useEffect(() => {}, [user, data]);
   console.log(data.img === undefined);
+  console.log(data.img ? data.img.length : "hello");
   return (
     <Link
       to={`/products/${productID}`}
@@ -27,7 +28,7 @@ const Card = ({ productID }) => {
       <div className='card-product-image-container'>
         <img
           className='card-product-image'
-          src={data.img ? data.img[data.main_img] : "33"}
+          src={data.img ? data.img[data.main_img] : ""}
           alt=''
         />
       </div>
