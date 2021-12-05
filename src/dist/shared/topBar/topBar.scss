@@ -21,6 +21,7 @@
   height: 25px;
   display: flex;
   justify-content: flex-start;
+  position: relative;
 }
 
 .dropdown-container {
@@ -76,8 +77,42 @@
   position: absolute;
   left: 0;
 }
+.horizontal-line-hamburger {
+  position: relative;
+}
+.horizontal-line-hamburger::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  width: 110%;
+  left: -30px;
+  border: solid 0.1px #ececec;
+}
 
 .bottom-nav-bar {
   display: flex;
   gap: 20px;
+}
+.hamburger-container {
+  display: none;
+}
+@media (max-width: 990px) {
+  .nav-bar {
+    display: none;
+  }
+  .hamburger-navigation {
+    display: flex;
+    z-index: 100000;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 5px 0px 15px;
+  }
+  .dropdown-container {
+    padding-bottom: 10px;
+  }
+  .hamburger-container {
+    display: inline-block;
+  }
+  // .hab
 }

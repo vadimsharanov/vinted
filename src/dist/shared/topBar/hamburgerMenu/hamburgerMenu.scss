@@ -1,0 +1,102 @@
+.hamburger-menu {
+  list-style: none;
+  padding: 0em;
+  margin: 0;
+  display: block;
+  max-height: 100vh;
+  overflow-y: auto;
+  // position: fixed;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.hamburger-menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 50px;
+  color: #666666;
+}
+
+.hamburger-menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hamburger-menu-button {
+  position: absolute;
+  z-index: 1000;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 5px;
+  cursor: pointer;
+  span {
+    background-color: #999999;
+    width: 20px;
+    height: 1.5px;
+  }
+}
+
+.hamburger-menu-options * :not(.hamburger-menu-options-title) {
+  border-bottom: solid 1px #ececec;
+  padding: 20px;
+  font-size: 20px;
+}
+.hamburger-menu-options-categories :hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+.hamburger-menu-options-title {
+  padding-left: 20px;
+  color: #999999;
+  font-size: 16px;
+}
+.hamburger-menu-options-title:hover {
+  cursor: auto;
+  background-color: #fff;
+}
+
+.hamburger-menu-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 10px 10px 0px;
+
+  .hamburger-menu-registration-button {
+    border-radius: 5px 5px 5px 5px;
+    border: solid 1px #09b1ba;
+    font-size: 18px;
+    color: #09b8d2;
+    padding: 12px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .hamburger-menu-registration-button:hover {
+    background-color: #fafdfe;
+  }
+  .hamburger-menu-new-product-button {
+    padding: 12px;
+    background-color: #09b1ba;
+    color: #fff;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .hamburger-menu-gidas-button {
+    background-color: #fff;
+    padding: 12px;
+    color: #09b8d2;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .hamburger-menu-gidas-button:hover {
+    background-color: #fafdfe;
+  }
+}
