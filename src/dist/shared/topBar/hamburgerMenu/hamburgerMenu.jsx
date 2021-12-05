@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./hamburgerMenu.scss";
 const HamburgerMenu = () => {
   const [open, setOpen] = useState(false);
@@ -6,15 +6,24 @@ const HamburgerMenu = () => {
 
   const menuOpen = () => {
     setOpen(!open);
-    setStyle(open ? "block" : "none");
   };
+  useEffect(() => {
+    setStyle(open ? "block" : "none");
+  }, [open]);
   return (
     <div className='container hamburger-menu'>
-      <div onClick={menuOpen} className='hamburger-menu-button'>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      {!open && (
+        <div onClick={menuOpen} className='hamburger-menu-button'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      )}
+      {open && (
+        <div onClick={menuOpen} className='hamburger-menu-close-button'>
+          <div>X</div>
+        </div>
+      )}
 
       <div className='row ' style={{ display: style }}>
         <div className='col-12'>
