@@ -2,42 +2,83 @@ import React from "react";
 import { useLocation } from "react-router";
 import useFetch from "../../hooks/useFetch";
 import "./cardPage.scss";
+
 const CardPage = () => {
   const location = useLocation().pathname;
   const productID = location.split("/products/").join("");
   const [user, data, brand, cat] = useFetch(productID);
-  console.log(data);
   return (
-    <div className='container cardpage'>
+    <div className='container'>
       <div className='row'>
-        <div class='col-md-4 col-4'>
-          <div style={{ height: "500px" }}>
-            <img
-              style={{ height: "500px", width: "100%" }}
-              src={data.img ? data.img[0] : ""}
-              alt=''
-            />
-          </div>
-        </div>
-        <div class='col-md-4' style={{ height: "250px" }}>
-          <div style={{ height: "250px" }}>
-            {" "}
-            <img
-              style={{ height: "240px", width: "100%" }}
-              src={data.img ? data.img[1] : ""}
-              alt=''
-            />
-          </div>
-          <div style={{ height: "250px" }}>
-            <img
-              style={{ height: "250px", width: "100%" }}
-              src={data.img ? data.img[2] : ""}
-              alt=''
-            />
-          </div>
+        <div className='col-xl-8 col-12 '>
+          {data.img && data.img.length > 4 && (
+            <div className='image-container-five'>
+              <div className='item-a'>
+                <img src={data.img ? data.img[0] : ""} alt='' />
+              </div>
+              <div className='item-b'>
+                <img src={data.img ? data.img[1] : ""} alt='' />
+              </div>
+              <div className='item-c'>
+                <img src={data.img ? data.img[2] : ""} alt='' />
+              </div>
+              <div className='item-d'>
+                <img src={data.img ? data.img[3] : ""} alt='' />
+              </div>
+              <div className='item-e'>
+                <img src={data.img ? data.img[4] : ""} alt='' />
+              </div>
+            </div>
+          )}
+          {data.img && data.img.length === 4 && (
+            <div className='image-container-four'>
+              <div className='item-a'>
+                <img src={data.img ? data.img[0] : ""} alt='' />
+              </div>
+              <div className='item-b'>
+                <img src={data.img ? data.img[1] : ""} alt='' />
+              </div>
+              <div className='item-c'>
+                <img src={data.img ? data.img[2] : ""} alt='' />
+              </div>
+              <div className='item-d'>
+                <img src={data.img ? data.img[3] : ""} alt='' />
+              </div>
+            </div>
+          )}
+          {data.img && data.img.length === 3 && (
+            <div className='image-container-three'>
+              <div className='item-a'>
+                <img src={data.img ? data.img[0] : ""} alt='' />
+              </div>
+              <div className='item-b'>
+                <img src={data.img ? data.img[1] : ""} alt='' />
+              </div>
+              <div className='item-c'>
+                <img src={data.img ? data.img[2] : ""} alt='' />
+              </div>
+            </div>
+          )}
+          {/* {data.img && data.img.length === 2 && (
+            <div className='image-container-two'>
+              <div className='item-a'>
+                <img src={data.img ? data.img[0] : ""} alt='' />
+              </div>
+              <div className='item-b'>
+                <img src={data.img ? data.img[1] : ""} alt='' />
+              </div>
+            </div>
+          )}
+          {data.img && data.img.length === 1 && (
+            <div className='image-container-one'>
+              <div className='item-a'>
+                <img src={data.img ? data.img[0] : ""} alt='' />
+              </div>
+            </div>
+          )} */}
         </div>
 
-        <div className='col-12 col-md-4 card-page-main-information '>
+        {/* <div className='col-12 col-md-4 card-page-main-information '>
           <div className='card-page-price'>
             {data.price ? data.price.toFixed(2) + "€" : ""}
           </div>
@@ -71,7 +112,7 @@ const CardPage = () => {
             <button className='teirautis-pardavejo'>Teirautis pardavėjo</button>
             <button className='pazymeti'>Pažymeti</button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
