@@ -11,13 +11,34 @@ const CardPage = () => {
   const [modal, setModal] = useState("modal-container-hidden");
   const [chosenSlide, setChosenSlide] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [gridStyle, setGridStyle] = useState("");
+  useEffect(() => {
+    switch (data.img ? data.img.length : "") {
+      case 5:
+        setGridStyle("five");
+        break;
+      case 4:
+        setGridStyle("four");
+        break;
+      case 3:
+        setGridStyle("three");
+        break;
+      case 2:
+        setGridStyle("two");
+        break;
+      case 1:
+        setGridStyle("one");
+        break;
+
+      default:
+        break;
+    }
+  }, [data]);
   const open = (slide) => {
-    console.log(slide);
     setChosenSlide(slide);
     setIsOpen(!isOpen);
     setModal(!isOpen ? "modal-container-visible" : "modal-container-hidden");
   };
-  console.log(isOpen);
   return (
     <div className='container'>
       <div className='row'>
@@ -25,11 +46,11 @@ const CardPage = () => {
           <Modal chosenSlide={chosenSlide} openModal={open} data={data}></Modal>
         </div>
         <div className='col-xl-8 col-12 '>
-          {data.img && data.img.length > 4 && (
+          {data.img && data.img.length > 5 && (
             <div className='image-container-five'>
               {data.img.map((item, index) =>
                 index > 4 ? (
-                  <div className={`item-e`} onClick={() => open(index)}>
+                  <div className={`item-e`} onClick={() => open(4)}>
                     <span className='image-more'>+{data.img.length - 4}</span>
                   </div>
                 ) : (
@@ -42,91 +63,18 @@ const CardPage = () => {
               )}
             </div>
           )}
-
-          {/* {data.img && data.img.length > 4 && (
-            <div className='image-container-five'>
-              <div className='item-a'>
-                <img src={data.img ? data.img[0] : ""} alt='' />
-              </div>
-              <div className='item-b'>
-                <img src={data.img ? data.img[1] : ""} alt='' />
-              </div>
-              <div className='item-c'>
-                <img src={data.img ? data.img[2] : ""} alt='' />
-              </div>
-              <div className='item-d'>
-                <img src={data.img ? data.img[3] : ""} alt='' />
-              </div>
-              <div className='item-e'>
-                <img src={data.img ? data.img[4] : ""} alt='' />
-              </div>
-            </div> */}
-          {data.img && data.img.length === 4 && (
-            <div className='image-container-four'>
-              <div className='item-a'>
-                <img src={data.img ? data.img[0] : ""} alt='' />
-              </div>
-              <div className='item-b'>
-                <img src={data.img ? data.img[1] : ""} alt='' />
-              </div>
-              <div className='item-c'>
-                <img src={data.img ? data.img[2] : ""} alt='' />
-              </div>
-              <div className='item-d'>
-                <img src={data.img ? data.img[3] : ""} alt='' />
-              </div>
+          {data.img && data.img.length <= 5 && (
+            <div className={`image-container-${gridStyle}`}>
+              {data.img.map((item, index) => (
+                <div
+                  className={`item-${String.fromCharCode(index + 97)}`}
+                  onClick={() => open(index)}>
+                  <img src={data.img ? item : ""} alt='' />
+                </div>
+              ))}
             </div>
           )}
-          {data.img && data.img.length === 3 && (
-            <div className='image-container-three'>
-              <div className='item-a'>
-                <img
-                  src={data.img ? data.img[0] : ""}
-                  alt=''
-                  onClick={() => open(0)}
-                />
-              </div>
-              <div className='item-b'>
-                <img
-                  src={data.img ? data.img[1] : ""}
-                  alt=''
-                  onClick={() => open(1)}
-                />
-              </div>
-              <div className='item-c'>
-                <img
-                  src={data.img ? data.img[2] : ""}
-                  alt=''
-                  onClick={() => open(2)}
-                />
-              </div>
-            </div>
-          )}
-          <div className={modal}>
-            <Modal
-              chosenSlide={chosenSlide}
-              openModal={open}
-              data={data}></Modal>
-          </div>
-          {/* {data.img && data.img.length === 2 && (
-            <div className='image-container-two'>
-              <div className='item-a'>
-                <img src={data.img ? data.img[0] : ""} alt='' />
-              </div>
-              <div className='item-b'>
-                <img src={data.img ? data.img[1] : ""} alt='' />
-              </div>
-            </div>
-          )}
-          {data.img && data.img.length === 1 && (
-            <div className='image-container-one'>
-              <div className='item-a'>
-                <img src={data.img ? data.img[0] : ""} alt='' />
-              </div>
-            </div>
-          )} */}
         </div>
-
         <div className='col-12 col-md-4 card-page-main-information '>
           <div className='card-page-price'>
             {data.price ? data.price.toFixed(2) + "€" : ""}
