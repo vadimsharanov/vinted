@@ -1,57 +1,53 @@
-.row > .column {
-  padding: 0 8px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Create four equal columns that floats next to eachother */
-.column {
-  float: left;
-  width: 25%;
-}
-
 /* The Modal (background) */
 .modal {
   position: fixed;
-  z-index: 1;
-  padding-top: 100px;
+  z-index: 10000;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  // overflow: auto;
+  // transition: 1s;
+  background: rgba(54, 54, 54, 0.6);
 }
 
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: yellow;
+  align-items: center;
   padding: 0;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  height: 100vh;
 }
 
 /* The Close Button */
 .close {
-  color: wheat;
+  color: white;
   position: absolute;
-  top: 200px;
-  right: 25px;
+  top: 20px;
+  right: 20px;
   font-size: 35px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
+  padding: 5px;
+  border-radius: 50% 50% 50% 50%;
 }
 
 .close:hover,
 .close:focus {
+  background: rgba(17, 17, 17, 0.3);
   color: #999;
   text-decoration: none;
   cursor: pointer;
+  color: white;
 }
 
 /* Hide the slides by default */
@@ -62,16 +58,20 @@
   cursor: pointer;
   position: absolute;
   top: 50%;
+  // left: 0;
   width: auto;
   padding: 16px;
   margin-top: -50px;
   color: white;
+  background: rgba(17, 17, 17, 0.3);
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  // display: none;
+  opacity: 0;
 }
 
 /* Position the "next button" to the right */
@@ -81,10 +81,6 @@
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
 
 /* Number text (1/3 etc) */
 .numbertext {
@@ -94,14 +90,15 @@
   position: absolute;
   top: 0;
 }
-
-img.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
+.next:hover,
+.prev:hover {
   opacity: 1;
+}
+.img-nah:hover ~ {
+  .next,
+  .prev {
+    opacity: 1;
+  }
 }
 
 img.hover-shadow {
@@ -110,4 +107,9 @@ img.hover-shadow {
 
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mySlides {
+  img {
+    height: 90vh;
+  }
 }

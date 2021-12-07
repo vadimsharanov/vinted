@@ -218,3 +218,15 @@
     }
   }
 }
+.modal-container-hidden {
+  visibility: hidden;
+  transition: visibility 1s, opacity 1s linear;
+  opacity: 0;
+  z-index: 1000000000;
+}
+.modal-container-visible {
+  z-index: 1000000000;
+  visibility: visible;
+  transition: visibility 1s, opacity 1s linear;
+  opacity: 1;
+}

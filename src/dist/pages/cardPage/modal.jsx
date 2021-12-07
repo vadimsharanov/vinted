@@ -16,24 +16,29 @@ const Modal = ({ data, openModal, chosenSlide }) => {
   console.log(chosenSlide);
   return (
     <div class='modal'>
-      <span onClick={openModal} class='close cursor'>
-        &times;
-      </span>
       <div class='modal-content'>
         <div class='mySlides'>
-          <div class='numbertext'>1 / 4</div>
-          <img
-            src={data.img ? data.img[currentSlide] : ""}
-            style={{ width: "100%" }}
-            alt=''
-          />
-        </div>
-
-        <div onClick={prevSlide} class='prev'>
-          &#10094;
-        </div>
-        <div onClick={nextSlide} class='next'>
-          &#10095;
+          <div class='numbertext'>{currentSlide + 1} /</div>
+          <div
+            style={{
+              position: "relative",
+              height: "80%",
+            }}>
+            <img
+              src={data.img ? data.img[currentSlide] : ""}
+              alt=''
+              className='img-nah'
+            />
+            <div onClick={prevSlide} class='prev'>
+              &#10094;
+            </div>
+            <div onClick={nextSlide} class='next'>
+              &#10095;
+            </div>
+            <span onClick={openModal} class='close cursor'>
+              &times;
+            </span>
+          </div>
         </div>
       </div>
     </div>

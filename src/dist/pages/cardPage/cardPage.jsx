@@ -8,13 +8,15 @@ const CardPage = () => {
   const location = useLocation().pathname;
   const productID = location.split("/products/").join("");
   const [user, data, brand, cat] = useFetch(productID);
-  const [modal, setModal] = useState("none");
+  const [modal, setModal] = useState("modal-container-hidden");
   const [chosenSlide, setChosenSlide] = useState("");
-  const open = (yes) => {
-    setChosenSlide(yes);
-    setModal(modal === "none" ? "block" : "none");
+  const [isOpen, setIsOpen] = useState(false);
+  const open = (slide) => {
+    setChosenSlide(slide);
+    setIsOpen(!isOpen);
+    setModal(isOpen ? "modal-container-visible" : "modal-container-hidden");
   };
-  console.log(chosenSlide);
+  console.log(isOpen);
   return (
     <div className='container'>
       <div className='row'>
@@ -79,7 +81,7 @@ const CardPage = () => {
               </div>
             </div>
           )}
-          <div style={{ display: modal }} className='modal-container'>
+          <div className={modal}>
             <Modal
               chosenSlide={chosenSlide}
               openModal={open}

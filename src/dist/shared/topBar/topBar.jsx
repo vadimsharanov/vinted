@@ -15,7 +15,7 @@ const TopBar = () => {
             src='https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png'
             alt='vinted-logo'
           />
-          <div className='horizontal-line-hamburger'></div>
+          {/* <div className='horizontal-line-hamburger'></div> */}
         </div>
         <div className='hamburger-container'>
           <HamburgerMenu></HamburgerMenu>
