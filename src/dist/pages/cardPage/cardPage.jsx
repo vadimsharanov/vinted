@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router";
 import useFetch from "../../hooks/useFetch";
 import "./cardPage.scss";
+import Modal from "./modal";
 
 const CardPage = () => {
   const location = useLocation().pathname;
   const productID = location.split("/products/").join("");
   const [user, data, brand, cat] = useFetch(productID);
+  const [modal, setModal] = useState("none");
+  const [chosenSlide, setChosenSlide] = useState("");
+  const open = (yes) => {
+    setChosenSlide(yes);
+    setModal(modal === "none" ? "block" : "none");
+  };
+  console.log(chosenSlide);
   return (
     <div className='container'>
       <div className='row'>
@@ -49,16 +57,34 @@ const CardPage = () => {
           {data.img && data.img.length === 3 && (
             <div className='image-container-three'>
               <div className='item-a'>
-                <img src={data.img ? data.img[0] : ""} alt='' />
+                <img
+                  src={data.img ? data.img[0] : ""}
+                  alt=''
+                  onClick={() => open(0)}
+                />
               </div>
               <div className='item-b'>
-                <img src={data.img ? data.img[1] : ""} alt='' />
+                <img
+                  src={data.img ? data.img[1] : ""}
+                  alt=''
+                  onClick={() => open(1)}
+                />
               </div>
               <div className='item-c'>
-                <img src={data.img ? data.img[2] : ""} alt='' />
+                <img
+                  src={data.img ? data.img[2] : ""}
+                  alt=''
+                  onClick={() => open(2)}
+                />
               </div>
             </div>
           )}
+          <div style={{ display: modal }} className='modal-container'>
+            <Modal
+              chosenSlide={chosenSlide}
+              openModal={open}
+              data={data}></Modal>
+          </div>
           {/* {data.img && data.img.length === 2 && (
             <div className='image-container-two'>
               <div className='item-a'>
@@ -78,7 +104,7 @@ const CardPage = () => {
           )} */}
         </div>
 
-        {/* <div className='col-12 col-md-4 card-page-main-information '>
+        <div className='col-12 col-md-4 card-page-main-information '>
           <div className='card-page-price'>
             {data.price ? data.price.toFixed(2) + "€" : ""}
           </div>
@@ -112,7 +138,7 @@ const CardPage = () => {
             <button className='teirautis-pardavejo'>Teirautis pardavėjo</button>
             <button className='pazymeti'>Pažymeti</button>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
