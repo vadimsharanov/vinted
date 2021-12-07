@@ -21,8 +21,29 @@ const CardPage = () => {
   return (
     <div className='container'>
       <div className='row'>
+        <div className={modal}>
+          <Modal chosenSlide={chosenSlide} openModal={open} data={data}></Modal>
+        </div>
         <div className='col-xl-8 col-12 '>
           {data.img && data.img.length > 4 && (
+            <div className='image-container-five'>
+              {data.img.map((item, index) =>
+                index > 4 ? (
+                  <div className={`item-e`} onClick={() => open(index)}>
+                    <span className='image-more'>+{data.img.length - 4}</span>
+                  </div>
+                ) : (
+                  <div
+                    className={`item-${String.fromCharCode(index + 97)}`}
+                    onClick={() => open(index)}>
+                    <img src={data.img ? item : ""} alt='' />
+                  </div>
+                )
+              )}
+            </div>
+          )}
+
+          {/* {data.img && data.img.length > 4 && (
             <div className='image-container-five'>
               <div className='item-a'>
                 <img src={data.img ? data.img[0] : ""} alt='' />
@@ -39,8 +60,7 @@ const CardPage = () => {
               <div className='item-e'>
                 <img src={data.img ? data.img[4] : ""} alt='' />
               </div>
-            </div>
-          )}
+            </div> */}
           {data.img && data.img.length === 4 && (
             <div className='image-container-four'>
               <div className='item-a'>

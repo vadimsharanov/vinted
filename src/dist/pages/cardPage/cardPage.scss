@@ -33,7 +33,21 @@
     grid-area: footer;
   }
   .item-e {
+    background: rgb(68, 68, 68);
+    opacity: 0.6;
     grid-area: bottom;
+    position: relative;
+    font-size: 30px;
+    color: #fff;
+    .image-more {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .item-e:hover {
+    cursor: pointer;
   }
 }
 .image-container-four {
