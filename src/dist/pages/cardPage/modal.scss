@@ -39,6 +39,7 @@
   font-weight: bold;
   padding: 5px;
   border-radius: 50% 50% 50% 50%;
+  opacity: 0;
 }
 
 .close:hover,
@@ -91,12 +92,14 @@
   top: 0;
 }
 .next:hover,
-.prev:hover {
+.prev:hover,
+.close:hover {
   opacity: 1;
 }
-.img-nah:hover ~ {
+.modal-img:hover ~ {
   .next,
-  .prev {
+  .prev,
+  .close {
     opacity: 1;
   }
 }

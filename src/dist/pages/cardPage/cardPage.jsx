@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import useFetch from "../../hooks/useFetch";
 import "./cardPage.scss";
@@ -12,9 +12,10 @@ const CardPage = () => {
   const [chosenSlide, setChosenSlide] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const open = (slide) => {
+    console.log(slide);
     setChosenSlide(slide);
     setIsOpen(!isOpen);
-    setModal(isOpen ? "modal-container-visible" : "modal-container-hidden");
+    setModal(!isOpen ? "modal-container-visible" : "modal-container-hidden");
   };
   console.log(isOpen);
   return (

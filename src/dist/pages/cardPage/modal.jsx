@@ -13,12 +13,10 @@ const Modal = ({ data, openModal, chosenSlide }) => {
   useEffect(() => {
     setCurrentSlide(chosenSlide);
   }, [chosenSlide]);
-  console.log(chosenSlide);
   return (
     <div class='modal'>
       <div class='modal-content'>
         <div class='mySlides'>
-          <div class='numbertext'>{currentSlide + 1} /</div>
           <div
             style={{
               position: "relative",
@@ -27,12 +25,24 @@ const Modal = ({ data, openModal, chosenSlide }) => {
             <img
               src={data.img ? data.img[currentSlide] : ""}
               alt=''
-              className='img-nah'
+              className='modal-img'
             />
-            <div onClick={prevSlide} class='prev'>
+            <div
+              onClick={prevSlide}
+              class='prev'
+              style={{ display: currentSlide === 0 ? "none" : "block" }}>
               &#10094;
             </div>
-            <div onClick={nextSlide} class='next'>
+            <div
+              style={{
+                display: data.img
+                  ? currentSlide === data.img.length - 1
+                    ? "none"
+                    : "block"
+                  : "",
+              }}
+              onClick={nextSlide}
+              class='next'>
               &#10095;
             </div>
             <span onClick={openModal} class='close cursor'>

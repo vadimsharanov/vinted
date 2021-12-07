@@ -220,13 +220,38 @@
 }
 .modal-container-hidden {
   visibility: hidden;
-  transition: visibility 1s, opacity 1s linear;
+  transition: visibility 1.3s, opacity 1.3s linear;
   opacity: 0;
   z-index: 1000000000;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(54, 54, 54, 0.6);
 }
 .modal-container-visible {
   z-index: 1000000000;
   visibility: visible;
-  transition: visibility 1s, opacity 1s linear;
+  transition: visibility 0.8s, opacity 0.8s linear;
   opacity: 1;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  // overflow: auto;
+  // transition: 1s;
+  background: rgba(54, 54, 54, 0.6);
+}
+img:hover {
+  cursor: pointer;
 }
