@@ -48,19 +48,26 @@ const CardPage = () => {
         <div className='col-xl-8 col-12 '>
           {data.img && data.img.length > 5 && (
             <div className='image-container-five'>
-              {data.img.map((item, index) =>
-                index > 4 ? (
-                  <div className={`item-e`} onClick={() => open(4)}>
-                    <span className='image-more'>+{data.img.length - 4}</span>
-                  </div>
-                ) : (
-                  <div
-                    className={`item-${String.fromCharCode(index + 97)}`}
-                    onClick={() => open(index)}>
-                    <img src={data.img ? item : ""} alt='' />
-                  </div>
-                )
-              )}
+              {data.img.map((item, index) => {
+                if (index > 5) {
+                  return "";
+                }
+                if (index === 5) {
+                  return (
+                    <div className='item-e' onClick={() => open(4)}>
+                      <span className='image-more'>+{data.img.length - 4}</span>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div
+                      className={`item-${String.fromCharCode(index + 97)}`}
+                      onClick={() => open(index)}>
+                      <img src={data.img ? item : ""} alt='' />
+                    </div>
+                  );
+                }
+              })}
             </div>
           )}
           {data.img && data.img.length <= 5 && (
