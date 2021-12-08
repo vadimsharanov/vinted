@@ -17,38 +17,39 @@ const Modal = ({ data, openModal, chosenSlide }) => {
     <div className='modal'>
       <div className='modal-content'>
         <div className='mySlides'>
-          <div
-            style={{
-              position: "relative",
-              height: "80%",
-            }}>
-            <img
-              src={data.img ? data.img[currentSlide] : ""}
-              alt=''
-              className='modal-img'
-            />
-            <div
-              onClick={prevSlide}
-              className='prev'
-              style={{ display: currentSlide === 0 ? "none" : "block" }}>
-              &#10094;
-            </div>
+          {data.img && (
             <div
               style={{
-                display: data.img
-                  ? currentSlide === data.img.length - 1
-                    ? "none"
-                    : "block"
-                  : "",
-              }}
-              onClick={nextSlide}
-              className='next'>
-              &#10095;
+                position: "relative",
+              }}>
+              <img
+                src={data.img ? data.img[currentSlide] : "fsdfsdfsd"}
+                alt=''
+                className='modal-img'
+              />
+              <div
+                onClick={prevSlide}
+                className='prev'
+                style={{ display: currentSlide === 0 ? "none" : "block" }}>
+                &#10094;
+              </div>
+              <div
+                style={{
+                  display: data.img
+                    ? currentSlide === data.img.length - 1
+                      ? "none"
+                      : "block"
+                    : "",
+                }}
+                onClick={nextSlide}
+                className='next'>
+                &#10095;
+              </div>
+              <span onClick={openModal} className='close cursor'>
+                &times;
+              </span>
             </div>
-            <span onClick={openModal} className='close cursor'>
-              &times;
-            </span>
-          </div>
+          )}
         </div>
       </div>
     </div>

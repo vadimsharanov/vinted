@@ -25,7 +25,7 @@ const Card = ({ productID }) => {
       <div className='card-product-image-container'>
         <img
           className='card-product-image'
-          src={data.img ? data.img[data.main_img] : ""}
+          src={data.img ? data.img[data.main_img] : "dddd"}
           alt=''
         />
       </div>
