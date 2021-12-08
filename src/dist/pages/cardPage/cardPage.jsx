@@ -12,7 +12,6 @@ const CardPage = () => {
   const [chosenSlide, setChosenSlide] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [gridStyle, setGridStyle] = useState("");
-  console.log(data);
   useEffect(() => {
     switch (data.img ? data.img.length : "") {
       case 5:

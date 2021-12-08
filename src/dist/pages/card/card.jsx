@@ -11,7 +11,7 @@ const Card = ({ productID }) => {
   return (
     <Link
       to={`/products/${productID}`}
-      className='product-card col-6 col-md-5 col-lg-3 col-xl-3-5 '>
+      className='product-card col-7 col-md-5 col-lg-3 col-xl-3-5 '>
       <div className='card-username'>
         <div className='card-avatar-container'>
           <img
