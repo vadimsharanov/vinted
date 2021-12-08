@@ -8,22 +8,27 @@
 }
 
 .moterims-button {
-  padding: 10px 12px 10px 12px;
+  padding: 10px 22px 10px 12px;
   border: none;
   color: #b7b7b7;
   background-color: #ffffff;
   font-size: 16px;
+  position: relative;
 }
 
 .moterims-button:hover {
   background-color: #f6f6f6;
   cursor: pointer;
 }
-
+.gavno {
+  background: #0aa8b1;
+  width: 100%;
+  height: 2.5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
 .moterims-content-none {
-  // display: flex;
-  // flex-direction: row;
-  // gap: 10px;
   display: none;
 }
 .moterims-content-yes {

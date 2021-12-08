@@ -26,6 +26,7 @@ const ApieMusDropDown = () => {
   return (
     <div ref={ref} className='moterims-dropdown'>
       <button onClick={openDropDown} className='moterims-button'>
+        {open && <div className='gavno'></div>}
         Apie mus
       </button>
       <div className={open ? "moterims-content-yes" : "moterims-content-none"}>
