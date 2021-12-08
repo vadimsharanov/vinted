@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 const NamamsDropDown = () => {
   const [open, setOpen] = useState(false);
 
-  const atkroj = () => {
+  const openDropDown = () => {
     if (open) {
       setOpen(false);
     }
@@ -10,9 +10,21 @@ const NamamsDropDown = () => {
       setOpen(true);
     }
   };
+  useEffect(() => {
+    const myshka = (e) => {
+      if (e.target.parentNode !== ref.current) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", myshka);
+    return () => {
+      document.removeEventListener("mousedown", myshka);
+    };
+  }, [open]);
+  const ref = useRef("");
   return (
-    <div className='moterims-dropdown'>
-      <button onClick={atkroj} className='moterims-button'>
+    <div ref={ref} className='namams-dropdown'>
+      <button onClick={openDropDown} className='moterims-button'>
         Namams
       </button>
       <div className={open ? "moterims-content-yes" : "moterims-content-none"}>

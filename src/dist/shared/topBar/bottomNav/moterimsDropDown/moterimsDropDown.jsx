@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./moterimsDropDown.scss";
 const MoterimsDropDown = () => {
   const [open, setOpen] = useState(false);
-
-  const atkroj = () => {
+  const openDropDown = (event) => {
     if (open) {
       setOpen(false);
     }
@@ -11,9 +10,22 @@ const MoterimsDropDown = () => {
       setOpen(true);
     }
   };
+  useEffect(() => {
+    const myshka = (e) => {
+      if (e.target.parentNode !== ref.current) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", myshka);
+    return () => {
+      document.removeEventListener("mousedown", myshka);
+    };
+  }, [open]);
+  const ref = useRef("");
+
   return (
-    <div className='moterims-dropdown'>
-      <button onClick={atkroj} className='moterims-button'>
+    <div ref={ref} className='moterims-dropdown'>
+      <button onClick={openDropDown} className='moterims-button'>
         Moterims
       </button>
       <div className={open ? "moterims-content-yes" : "moterims-content-none"}>

@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 const VyramsDropDown = () => {
   const [open, setOpen] = useState(false);
 
-  const atkroj = () => {
+  const openDropDown = () => {
     if (open) {
       setOpen(false);
     }
     if (!open) {
       setOpen(true);
     }
-    console.log(open);
   };
+  useEffect(() => {
+    const myshka = (e) => {
+      if (e.target.parentNode !== ref.current) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", myshka);
+    return () => {
+      document.removeEventListener("mousedown", myshka);
+    };
+  }, [open]);
+  const ref = useRef("");
   return (
-    <div className='moterims-dropdown'>
-      <button onClick={atkroj} className='moterims-button'>
+    <div ref={ref} className='vyrams-dropdown'>
+      <button onClick={openDropDown} className='moterims-button'>
         Vyrams
       </button>
       <div className={open ? "moterims-content-yes" : "moterims-content-none"}>
