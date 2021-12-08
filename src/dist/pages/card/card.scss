@@ -33,7 +33,18 @@
       width: 100%;
       max-width: 350px;
       height: 330px;
-      min-width: 170px;
+      // min-width: 170px;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .product-card {
+    font-size: 15px;
+    .card-product-image-container {
+      .card-product-image {
+        height: 150px;
+        width: 100%;
+      }
     }
   }
 }

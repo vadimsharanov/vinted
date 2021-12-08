@@ -7,11 +7,12 @@ import Modal from "./modal";
 const CardPage = () => {
   const location = useLocation().pathname;
   const productID = location.split("/products/").join("");
-  const [data, brand] = useFetch(productID);
+  const [, data, brand] = useFetch(productID);
   const [modal, setModal] = useState("modal-container-hidden");
   const [chosenSlide, setChosenSlide] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [gridStyle, setGridStyle] = useState("");
+  console.log(data);
   useEffect(() => {
     switch (data.img ? data.img.length : "") {
       case 5:

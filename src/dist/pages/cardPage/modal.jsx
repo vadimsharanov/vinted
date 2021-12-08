@@ -25,7 +25,7 @@ const Modal = ({ data, openModal, chosenSlide }) => {
             <img
               src={data.img ? data.img[currentSlide] : ""}
               alt=''
-              classNameName='modal-img'
+              className='modal-img'
             />
             <div
               onClick={prevSlide}
