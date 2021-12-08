@@ -1,3 +1,3 @@
 Hello!
 
-Page currently looks like : https://vinted-prototype1.netlify.app/
+Page currently looks like : https://zealous-noyce-bff83c.netlify.app/
