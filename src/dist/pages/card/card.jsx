@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
@@ -6,11 +6,8 @@ import "./card.scss";
 const noImage =
   "https://play-lh.googleusercontent.com/-KEUSBhEjA-A/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuckWYBLYp6p7p5y1jMBaog7Wxvfw7g/photo.jpg";
 const Card = ({ productID }) => {
-  const [image, setImage] = useState("");
-  const [user, data, brand, cat] = useFetch(productID);
+  const [user, data, brand] = useFetch(productID);
   useEffect(() => {}, [user, data]);
-  console.log(data.img === undefined);
-  console.log(data.img ? data.img.length : "hello");
   return (
     <Link
       to={`/products/${productID}`}
@@ -38,7 +35,7 @@ const Card = ({ productID }) => {
             {data.price ? data.price + " € " : ""}
           </div>
           <div className='card-product-like'>
-            <i class='fa fa-heart-o' aria-hidden='true'></i>
+            <i className='fa fa-heart-o' aria-hidden='true'></i>
             <span>3</span>
           </div>
         </div>

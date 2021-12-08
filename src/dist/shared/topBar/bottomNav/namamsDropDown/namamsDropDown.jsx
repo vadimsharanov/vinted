@@ -33,11 +33,11 @@ const NamamsDropDown = () => {
           <div className='moterims-first-level'>
             <span className='with-icon'>
               Peržiūrėti viską
-              <i class='fa fa-th' aria-hidden='true'></i>
+              <i className='fa fa-th' aria-hidden='true'></i>
             </span>
             <span>
               Drabužiai
-              <i class='fas fa-tshirt' aria-hidden='true'></i>
+              <i className='fas fa-tshirt' aria-hidden='true'></i>
             </span>
             <span>Tekstilė</span>
             <span>Interjero akcentai</span>

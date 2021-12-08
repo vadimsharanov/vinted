@@ -33,7 +33,7 @@ const VaikamsDropDown = () => {
           <div className='moterims-first-level'>
             <span className='with-icon'>
               Peržiūrėti viską
-              <i class='fa fa-th' aria-hidden='true'></i>
+              <i className='fa fa-th' aria-hidden='true'></i>
             </span>
             <span>Apranga mergaitėms</span>
             <span>Apranga berniukams</span>

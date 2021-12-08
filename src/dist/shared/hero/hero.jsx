@@ -12,9 +12,7 @@ const Hero = () => {
                 Atėjo metas atlaisvinti vietos spintoje?
               </h1>
               <button className='hero-window-button'>Įkelti prekę</button>
-              <a className='hero-window-link' href=''>
-                Sužinok, kaip
-              </a>
+              Sužinok, kaip
             </div>
           </div>
         </div>

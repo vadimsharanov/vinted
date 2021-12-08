@@ -35,11 +35,11 @@ const MoterimsDropDown = () => {
           <div className='moterims-first-level'>
             <span className='with-icon'>
               Peržiurėti viską
-              <i class='fa fa-th' aria-hidden='true'></i>
+              <i className='fa fa-th' aria-hidden='true'></i>
             </span>
             <span>
               Drabužiai
-              <i class='fas fa-tshirt' aria-hidden='true'></i>
+              <i className='fas fa-tshirt' aria-hidden='true'></i>
             </span>
             <span>Batai</span>
             <span>Rankinės</span>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import ApieMusDropDown from "./apieMusDropDown/apieMusDropDown";
 import "./bottomNav.scss";
 import MoterimsDropDown from "./moterimsDropDown/moterimsDropDown";
@@ -9,7 +9,6 @@ const BottomNav = () => {
   return (
     <div className='bottom-nav'>
       <MoterimsDropDown></MoterimsDropDown>
-
       <VyramsDropDown></VyramsDropDown>
       <VaikamsDropDown></VaikamsDropDown>
       <NamamsDropDown></NamamsDropDown>

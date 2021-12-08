@@ -15,7 +15,6 @@ const TopBar = () => {
             src='https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png'
             alt='vinted-logo'
           />
-          {/* <div className='horizontal-line-hamburger'></div> */}
         </div>
         <div className='hamburger-container'>
           <HamburgerMenu></HamburgerMenu>
@@ -47,9 +46,7 @@ const TopBar = () => {
             </button>
             <button className='new-product-button'>Įkelti prekę</button>
             <div className='question-button'>
-              <a href=''>
-                <i class='fa fa-question-circle-o' aria-hidden='true'></i>
-              </a>
+              <i className='fa fa-question-circle-o' aria-hidden='true'></i>
             </div>
           </div>
         </div>
@@ -66,5 +63,3 @@ const TopBar = () => {
   );
 };
 export default TopBar;
-{
-}

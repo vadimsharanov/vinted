@@ -84,6 +84,7 @@ const useFetch = (productID) => {
   }
   useEffect(() => {
     getProduct();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productID]);
   return [user, data, brand, cat];
 };

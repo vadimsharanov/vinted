@@ -14,9 +14,9 @@ const Modal = ({ data, openModal, chosenSlide }) => {
     setCurrentSlide(chosenSlide);
   }, [chosenSlide]);
   return (
-    <div class='modal'>
-      <div class='modal-content'>
-        <div class='mySlides'>
+    <div className='modal'>
+      <div className='modal-content'>
+        <div className='mySlides'>
           <div
             style={{
               position: "relative",
@@ -25,11 +25,11 @@ const Modal = ({ data, openModal, chosenSlide }) => {
             <img
               src={data.img ? data.img[currentSlide] : ""}
               alt=''
-              className='modal-img'
+              classNameName='modal-img'
             />
             <div
               onClick={prevSlide}
-              class='prev'
+              className='prev'
               style={{ display: currentSlide === 0 ? "none" : "block" }}>
               &#10094;
             </div>
@@ -42,10 +42,10 @@ const Modal = ({ data, openModal, chosenSlide }) => {
                   : "",
               }}
               onClick={nextSlide}
-              class='next'>
+              className='next'>
               &#10095;
             </div>
-            <span onClick={openModal} class='close cursor'>
+            <span onClick={openModal} className='close cursor'>
               &times;
             </span>
           </div>
