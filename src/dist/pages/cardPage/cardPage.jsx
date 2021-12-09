@@ -3,6 +3,7 @@ import { useLocation } from "react-router";
 import useFetch from "../../hooks/useFetch";
 import "./cardPage.scss";
 import Modal from "./modal";
+import "./cardPageGrid.scss";
 
 const CardPage = () => {
   const location = useLocation().pathname;
@@ -12,6 +13,7 @@ const CardPage = () => {
   const [chosenSlide, setChosenSlide] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [gridStyle, setGridStyle] = useState("");
+  console.log(data.size);
   useEffect(() => {
     switch (data.img ? data.img.length : "") {
       case 5:
@@ -40,8 +42,8 @@ const CardPage = () => {
     setModal(!isOpen ? "modal-container-visible" : "modal-container-hidden");
   };
   return (
-    <div className='container'>
-      <div className='row'>
+    <div className='container cardpage '>
+      <div className='row '>
         <div className={modal}>
           <Modal chosenSlide={chosenSlide} openModal={open} data={data}></Modal>
         </div>
@@ -82,7 +84,7 @@ const CardPage = () => {
             </div>
           )}
         </div>
-        <div className='col-12 col-md-4 card-page-main-information '>
+        <div className='col-12 col-md-3 card-page-main-information '>
           <div className='card-page-price'>
             {data.price ? data.price.toFixed(2) + "€" : ""}
           </div>
@@ -96,9 +98,28 @@ const CardPage = () => {
             {data.size && data.size.length > 0 && (
               <div className='card-page-size'>
                 <div>DYDIS</div>
-                <div>{data.size}</div>
+                <div>{data.size ? data.size.join(" / ") : ""}</div>
+                <div>
+                  <i class='fa fa-info-circle' aria-hidden='true'></i>
+                </div>
               </div>
             )}
+            <div>
+              <div>VIETOVĖ</div>
+              <div>LIETUVA</div>
+            </div>
+            <div>
+              <div>BUKLĖ</div>
+              <div>LABAI GERA</div>
+            </div>
+            <div>
+              <div>ĮKELTA</div>
+              <div>PRIEŠ 1 DIENĄ</div>
+            </div>
+            <div>
+              <div>MOKĖJIMO BŪDAI</div>
+              <div>MOKĖJIMO KORTELĖ</div>
+            </div>
           </div>
           <div className='card-page-description'>
             {data.title && (
