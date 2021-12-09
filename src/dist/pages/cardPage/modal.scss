@@ -69,7 +69,6 @@
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
-  // display: none;
   opacity: 0;
 }
 
@@ -102,10 +101,6 @@
   }
 }
 
-img.hover-shadow {
-  transition: 0.3s;
-}
-
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -122,5 +117,10 @@ img.hover-shadow {
     img {
       height: auto;
     }
+  }
+  .prev,
+  .next,
+  .close {
+    opacity: 1;
   }
 }
