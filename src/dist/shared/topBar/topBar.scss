@@ -46,6 +46,10 @@
     height: 29px;
     background-color: #fff;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .registration-button:hover {
     background-color: #fafdfe;

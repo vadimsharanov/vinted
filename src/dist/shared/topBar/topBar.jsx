@@ -41,9 +41,9 @@ const TopBar = () => {
             <DropDown></DropDown>
           </div>
           <div className='col-4 col-xl-4 col-lg-4 col-md-4 nav-buttons'>
-            <button className='registration-button'>
+            <Link className='registration-button' to='/productssss'>
               Registruotis | Prisijungti
-            </button>
+            </Link>
             <button className='new-product-button'>Įkelti prekę</button>
             <div className='question-button'>
               <i className='fa fa-question-circle-o' aria-hidden='true'></i>
