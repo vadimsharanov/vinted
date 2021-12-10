@@ -22,7 +22,7 @@
 }
 .hamburger-menu-button {
   position: absolute;
-  z-index: 1000;
+  z-index: 3;
   right: 10px;
   top: 10px;
   display: flex;
@@ -50,7 +50,7 @@
 }
 .hamburger-menu-close-button {
   position: absolute;
-  z-index: 1000;
+  z-index: 3;
   right: 10px;
   top: 10px;
   display: flex;

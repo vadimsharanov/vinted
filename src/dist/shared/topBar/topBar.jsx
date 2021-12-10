@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import DropDown from "./dropDown/dropDown";
 import "./topBar.scss";
 import BottomNav from "./bottomNav/bottomNav";
 import { Link } from "react-router-dom";
 import HamburgerMenu from "./hamburgerMenu/hamburgerMenu";
+import RegistrationModal from "../registrationModal/registrationModal";
 const TopBar = () => {
-  // link;
+  const [regModal, setRegModal] = useState(false);
+  const openModal = () => {
+    setRegModal(!regModal);
+  };
   return (
     <>
+      <div
+        className='reg-modal-container'
+        style={{ display: regModal ? "block" : "none" }}>
+        <RegistrationModal openModal={openModal}></RegistrationModal>
+      </div>
       <div className='hamburger-navigation'>
         <div className='nav-logo-container'>
           <img
@@ -41,9 +50,9 @@ const TopBar = () => {
             <DropDown></DropDown>
           </div>
           <div className='col-4 col-xl-4 col-lg-4 col-md-4 nav-buttons'>
-            <Link className='registration-button' to='/productssss'>
+            <button onClick={openModal} className='registration-button'>
               Registruotis | Prisijungti
-            </Link>
+            </button>
             <button className='new-product-button'>Įkelti prekę</button>
             <div className='question-button'>
               <i className='fa fa-question-circle-o' aria-hidden='true'></i>

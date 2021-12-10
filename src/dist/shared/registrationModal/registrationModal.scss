@@ -1,3 +1,63 @@
+.reg-modal-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  text-align: center;
+  background: rgba(54, 54, 54, 0.6);
+}
+
 .registration-modal {
-  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .registration-modal-content {
+    margin-top: 150px;
+    width: 400px;
+    // height: 300px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+  }
+  .reg-modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 14px;
+    background-color: blue;
+  }
+  .reg-modal-heading {
+    margin-top: 20px;
+    font-size: 27px;
+    font-weight: 300;
+    text-align: center;
+  }
+  .sign-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    div {
+      border: solid 1px black;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 10px 10px 10px;
+    }
+  }
+  .reg-modal-bottom-text {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 }
