@@ -5,26 +5,38 @@ import BottomNav from "./bottomNav/bottomNav";
 import { Link } from "react-router-dom";
 import HamburgerMenu from "./hamburgerMenu/hamburgerMenu";
 import RegistrationModal from "../registrationModal/registrationModal";
+import SignWithEmail from "../registrationModal/signWithEmail";
 const TopBar = () => {
   const [regModal, setRegModal] = useState(false);
   const [emailSign, setEmailSign] = useState(false);
   const openModal = () => {
     setRegModal(!regModal);
   };
+  const openSignModal = () => {
+    setEmailSign(!emailSign);
+    setRegModal(false);
+  };
   useEffect(() => {
     let body = document.getElementsByTagName("body");
-    if (regModal) {
+    if (regModal || emailSign) {
       body[0].style.overflow = "hidden";
     } else {
       body[0].style.overflow = "";
     }
-  }, [regModal]);
+  }, [regModal, emailSign]);
   return (
     <>
       <div
         className='reg-modal-container'
         style={{ display: regModal ? "block" : "none" }}>
-        <RegistrationModal openModal={openModal}></RegistrationModal>
+        <RegistrationModal
+          openSignModal={openSignModal}
+          openModal={openModal}></RegistrationModal>
+      </div>
+      <div
+        className='reg-modal-container'
+        style={{ display: emailSign ? "block" : "none" }}>
+        <SignWithEmail openSignModal={openSignModal}></SignWithEmail>
       </div>
       <div className='hamburger-navigation'>
         <div className='nav-logo-container'>

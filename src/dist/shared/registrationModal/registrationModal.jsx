@@ -1,6 +1,6 @@
 import React from "react";
 import "./registrationModal.scss";
-const RegistrationModal = ({ openModal }) => {
+const RegistrationModal = ({ openModal, openSignModal }) => {
   return (
     <div className='registration-modal'>
       <div className='registration-modal-content'>
@@ -22,10 +22,15 @@ const RegistrationModal = ({ openModal }) => {
             Tęsti su Apple
           </div>
         </div>
+
         <div className='reg-modal-bottom-text'>
           <span>
             Arba prisijunk su &nbsp;
-            <span className='reg-modal-bottom-text-link'>El. pastu</span>
+            <span
+              onClick={openSignModal}
+              className='reg-modal-bottom-text-link'>
+              El. pastu
+            </span>
           </span>
           <span>
             Dar neturi paskyros? &nbsp;

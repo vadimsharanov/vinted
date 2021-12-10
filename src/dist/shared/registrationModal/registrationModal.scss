@@ -46,13 +46,24 @@
     font-weight: 300;
     text-align: center;
   }
+  .reg-modal-button {
+    background-color: #1fb8c0;
+    border: none;
+    border-radius: 4px;
+    padding: 13px;
+    font-size: 20px;
+    color: #fff;
+  }
+  .reg-modal-button:hover {
+    cursor: pointer;
+  }
 
   .sign-methods {
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    div {
+    div,
+    input {
       border: solid 1px black;
       display: flex;
       flex-direction: row;
@@ -67,6 +78,15 @@
       .fa-facebook-official {
         color: rgb(21, 21, 233);
       }
+    }
+    input {
+      border: none;
+      padding: 20px 10px 10px 10px;
+      font-size: 20px;
+    }
+    input:focus {
+      outline: none;
+      border-bottom: 1px solid #89dade;
     }
     div:hover {
       background-color: #fafafa;
