@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DropDown from "./dropDown/dropDown";
 import "./topBar.scss";
 import BottomNav from "./bottomNav/bottomNav";
@@ -7,9 +7,18 @@ import HamburgerMenu from "./hamburgerMenu/hamburgerMenu";
 import RegistrationModal from "../registrationModal/registrationModal";
 const TopBar = () => {
   const [regModal, setRegModal] = useState(false);
+  const [emailSign, setEmailSign] = useState(false);
   const openModal = () => {
     setRegModal(!regModal);
   };
+  useEffect(() => {
+    let body = document.getElementsByTagName("body");
+    if (regModal) {
+      body[0].style.overflow = "hidden";
+    } else {
+      body[0].style.overflow = "";
+    }
+  }, [regModal]);
   return (
     <>
       <div

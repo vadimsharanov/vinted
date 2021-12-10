@@ -23,8 +23,16 @@ const RegistrationModal = ({ openModal }) => {
           </div>
         </div>
         <div className='reg-modal-bottom-text'>
-          <span>Arba prisijunk su EL pastu</span>
-          <span>Dar neturi paskyros? Registruotis </span>
+          <span>
+            Arba prisijunk su &nbsp;
+            <span className='reg-modal-bottom-text-link'>El. pastu</span>
+          </span>
+          <span>
+            Dar neturi paskyros? &nbsp;
+            <span className='reg-modal-bottom-text-link'>
+              Registruotis{" "}
+            </span>{" "}
+          </span>
         </div>
       </div>
     </div>
