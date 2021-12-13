@@ -28,7 +28,6 @@ const MoterimsDropDown = () => {
     <div ref={ref} className='moterims-dropdown'>
       <button onClick={openDropDown} className='moterims-button'>
         Moterims
-        {open && <div className='gavno'></div>}
       </button>
       <div className={open ? "moterims-content-yes" : "moterims-content-none"}>
         <div className='moterims-dropdown-all-levels'>

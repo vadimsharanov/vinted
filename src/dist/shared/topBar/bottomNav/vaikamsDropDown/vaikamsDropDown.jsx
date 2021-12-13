@@ -25,7 +25,6 @@ const VaikamsDropDown = () => {
   return (
     <div ref={ref} className='vaikams-dropdown'>
       <button onClick={openDropDown} className='moterims-button'>
-        {open && <div className='gavno'></div>}
         Vaikams
       </button>
       <div className={open ? "moterims-content-yes" : "moterims-content-none"}>

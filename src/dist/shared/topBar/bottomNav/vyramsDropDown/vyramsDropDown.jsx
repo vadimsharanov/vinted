@@ -25,7 +25,6 @@ const VyramsDropDown = () => {
   return (
     <div ref={ref} className='vyrams-dropdown'>
       <button onClick={openDropDown} className='moterims-button'>
-        {open && <div className='gavno'></div>}
         Vyrams
       </button>
       <div className={open ? "moterims-content-yes" : "moterims-content-none"}>
